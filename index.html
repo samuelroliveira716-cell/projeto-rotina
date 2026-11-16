@@ -1,92 +1,168 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Evolução</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="Projeto Evolução: disciplina, constância e progresso diário.">
+  <title>Projeto Evolução</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="watermark">
-        <span>DISCIPLINA</span>
-        <span>EVOLUÇÃO</span>
-        <span>CONSTÂNCIA</span>
-        <span>FOCO</span>
-        <span>PROGRESSO</span>
+  <div class="watermark" aria-hidden="true">
+    <span>DISCIPLINA</span>
+    <span>EVOLUÇÃO</span>
+    <span>CONSTÂNCIA</span>
+    <span>FOCO</span>
+    <span>PROGRESSO</span>
+  </div>
+
+  <main class="container">
+
+    <header class="header">
+      <div class="brand">
+        <div class="brand-icon">E.</div>
+        <div>
+          <p class="brand-name">PROJETO</p>
+          <p class="brand-subtitle">EVOLUÇÃO</p>
+        </div>
+      </div>
+      <div class="live-clock">
+        <span class="live-dot"></span>
+        <span id="device-time">--:--:--</span>
+      </div>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">15 NOV 2026 • 15 JAN 2027</p>
+      <h1>TORNE-SE SUA<br><span>MELHOR VERSÃO.</span></h1>
+      <p class="hero-description">
+        Pequenas atitudes. Grandes transformações.
+        Um dia de cada vez.
+      </p>
+    </section>
+
+    <section class="card daily-card">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">SEU DESEMPENHO</p>
+          <h2>Progresso diário</h2>
+        </div>
+        <div class="day-badge">
+          <span>DIA</span>
+          <strong id="day-number">01</strong>
+        </div>
+      </div>
+
+      <div class="date-line">
+        <span id="today">Carregando data...</span>
+        <span id="daily-percentage">0%</span>
+      </div>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="progress"></div>
+      </div>
+
+      <div class="progress-details">
+        <strong id="daily-count">0/15 concluídas</strong>
+        <span id="message">O primeiro passo começa agora.</span>
+      </div>
+
+      <div class="daily-stats">
+        <div>
+          <strong id="daily-done">0</strong>
+          <span>Concluídas</span>
+        </div>
+        <div>
+          <strong id="daily-failed">0</strong>
+          <span>Não concluídas</span>
+        </div>
+        <div>
+          <strong id="daily-pending">15</strong>
+          <span>Pendentes</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="missions-section">
+      <div class="section-heading missions-heading">
+        <div>
+          <p class="eyebrow">SUA ROTINA</p>
+          <h2>Missões do dia</h2>
+        </div>
+        <span class="mission-total">15 MISSÕES</span>
+      </div>
+
+      <div class="mission-legend">
+        <span><i class="legend-dot done-dot"></i> Feita</span>
+        <span><i class="legend-dot failed-dot"></i> Não feita</span>
+        <span><i class="legend-dot pending-dot"></i> Pendente</span>
+      </div>
+
+      <div id="mission-list" class="mission-list"></div>
+
+      <p class="reset-notice">
+        <span class="notice-icon">!</span>
+        As missões serão reiniciadas às <strong>00:00</strong>,
+        conforme o horário local do seu dispositivo.
+      </p>
+    </section>
+
+    <section class="card general-card">
+      <p class="eyebrow">SUA JORNADA COMPLETA</p>
+      <h2>Progresso geral</h2>
+
+      <div class="general-number">
+        <strong id="project-percentage">0%</strong>
+        <span>do projeto concluído</span>
+      </div>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="project-progress"></div>
+      </div>
+
+      <div class="general-details">
+        <span><strong id="done">0</strong> missões concluídas</span>
+        <span><strong id="remaining">61</strong> dias restantes</span>
+      </div>
+    </section>
+
+    <section class="card history-card">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">SEU CAMINHO</p>
+          <h2>Histórico diário</h2>
+        </div>
+        <span class="history-icon">↗</span>
+      </div>
+      <div id="history-list" class="history-list">
+        <p class="empty-history">Seu histórico aparecerá aqui.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-line"></div>
+      <p>PROJETO EVOLUÇÃO</p>
+      <span>DISCIPLINA • CONSTÂNCIA • PROGRESSO</span>
+    </footer>
+
+  </main>
+
+  <div id="day-transition" class="transition-screen" aria-hidden="true">
+    <div class="transition-content">
+      <div class="transition-symbol">E.</div>
+      <p class="eyebrow">UM NOVO CAPÍTULO COMEÇA</p>
+      <h2>NOVO DIA.</h2>
+      <p id="transition-day">DIA 02</p>
+      <div class="transition-line"></div>
+      <span>Uma nova oportunidade de evoluir.</span>
     </div>
+  </div>
 
-    <main class="container">
-
-        <header>
-            <div class="logo">E<span>.</span></div>
-            <div>
-                <h1>PROJETO EVOLUÇÃO</h1>
-                <p>Sua jornada começa aqui.</p>
-            </div>
-        </header>
-
-        <section class="hero">
-            <span class="tag">2026 / 2027</span>
-            <h2>TORNE-SE SUA<br><span>MELHOR VERSÃO.</span></h2>
-            <p>Disciplina hoje. Resultados amanhã.</p>
-        </section>
-
-        <section class="card progress-card">
-            <div class="section-heading">
-                <div>
-                    <span class="small-title">SEU DESEMPENHO</span>
-                    <h3>Progresso diário</h3>
-                </div>
-                <strong id="counter">0/15</strong>
-            </div>
-
-            <div class="progress-track">
-                <div class="progress-fill" id="progress"></div>
-            </div>
-
-            <p id="message">O primeiro passo começa agora.</p>
-        </section>
-
-        <section class="card">
-            <div class="section-heading">
-                <div>
-                    <span class="small-title">SEU COMPROMISSO</span>
-                    <h3>Missões de hoje</h3>
-                </div>
-                <span class="gold">DAILY TASKS</span>
-            </div>
-
-            <div id="mission-list"></div>
-        </section>
-
-        <section class="stats">
-            <div class="card stat-card">
-                <span class="small-title">DIAS DE PROJETO</span>
-                <strong id="days">1</strong>
-            </div>
-
-            <div class="card stat-card">
-                <span class="small-title">MISSÕES FEITAS</span>
-                <strong id="done">0</strong>
-            </div>
-        </section>
-
-        <section class="card">
-            <span class="small-title">SUA JORNADA</span>
-            <h3>Não pare agora.</h3>
-            <div class="progress-track">
-                <div class="progress-fill" id="project-progress"></div>
-            </div>
-            <p id="remaining"></p>
-        </section>
-
-        <footer>
-            <span>E.</span> PROJETO EVOLUÇÃO · 2026/2027
-        </footer>
-
-    </main>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
